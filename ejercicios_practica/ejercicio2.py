@@ -11,6 +11,8 @@ import json
 import requests
 
 import matplotlib.pyplot as plt
+from sqlalchemy import true
+
 
 
 if __name__ == '__main__':
@@ -46,4 +48,83 @@ if __name__ == '__main__':
     # y verifique si los primeros usuarios (mirando la página a ojo)
     # los datos recolectados son correctos.
 
+    response = requests.get(url)
+    data = response.json()
+
+    usuarios = []
+    userId_1 = []
+    userId_2 = []
+    userId_3 = []
+    userId_4 = []
+    userId_5 = []
+    userId_6 = []
+    userId_7 = []
+    userId_8 = []
+    userId_9 = []
+    userId_10 = []
+
+    for d in data: 
+        if d["completed"] == True:
+           usuarios.append(d) 
+
+    for i in usuarios:
+        if i['userId'] == 1:
+            userId_1.append(i)
+        elif i['userId'] == 2:
+            userId_2.append(i)
+        elif i['userId'] == 3:
+            userId_3.append(i)
+        elif i['userId'] == 4:
+            userId_4.append(i)
+        elif i['userId'] == 5:
+            userId_5.append(i)
+        elif i['userId'] == 6:
+            userId_6.append(i)
+        elif i['userId'] == 7:
+            userId_7.append(i)
+        elif i['userId'] == 8:
+            userId_8.append(i)
+        elif i['userId'] == 9:
+            userId_9.append(i)
+        elif i['userId'] == 10:
+            userId_10.append(i)
+    
+    print('userId_1:', len(userId_1))
+    print('userId_2:', len(userId_2))
+    print('userId_3:', len(userId_3))
+    print('userId_4:', len(userId_4))
+    print('userId_5:', len(userId_5))
+    print('userId_6:', len(userId_6))
+    print('userId_7:', len(userId_7))
+    print('userId_8:', len(userId_8))
+    print('userId_9:', len(userId_9))
+    print('userId_10:', len(userId_10))
+
+    id_usuarios = ['userId_1', 'userId_2', 'userId_3', 'userId_4', 'userId_5', 'userId_6','userId_7', 'userId_8', 'userId_9', 'userId_10']
+    titulos_completados = [11, 8, 7, 6, 12, 6, 9, 11, 8, 12]
+
+    fig = plt.figure()
+    fig.suptitle('Titulos completados por usuario', fontsize=15, label='usuarios')
+    ax = fig.add_subplot()
+
+    ax.bar(id_usuarios, titulos_completados)
+    ax.legend()
+    ax.grid()
+    plt.show()
+
+
+
+
+#1 = 11
+#2 = 8
+#3 = 7
+#4 = 6
+#5 = 12
+#6 = 6
+#7 = 9
+#8 = 11
+#9 = 8
+#10 = 12
+
+        
     print("terminamos")

@@ -1,0 +1,25 @@
+[
+    {
+        "nombre": "Laura",
+        "apellido": "Berman",
+        "DNI": "38242881",
+        "prendas": [
+            {
+                "prenda": "remeras",
+                "cantidad": "10"
+            },
+            {
+                "prenda": "pantalones",
+                "cantidad": "5"
+            },
+            {
+                "prenda": "zapatillas",
+                "cantidad": "4"
+            },
+            {
+                "prenda": "camperas",
+                "cantidad": "3"
+            }
+        ]
+    }
+]

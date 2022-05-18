@@ -32,6 +32,25 @@ def serializar():
 
     # Observe el archivo y verifique que se almaceno lo deseado
 
+    json_data = { 
+                "nombre": "Laura",
+                "apellido": "Berman",
+                "DNI": "38242881",
+                "prendas": [
+                    {"prenda": "remeras",
+                    "cantidad": "10"}, 
+                    {"prenda": "pantalones", 
+                    "cantidad": "5"},
+                    {"prenda": "zapatillas", 
+                    "cantidad": "4"}, 
+                    {"prenda": "camperas", 
+                    "cantidad": "3"} 
+                ] }
+
+    with open('json_data.json', 'w') as jsonfile:
+        data = [json_data]
+        json.dump(data, jsonfile, indent=4)
+
 
 def deserializar():
     print("Funcion que lee un archivo JSON")
@@ -44,6 +63,11 @@ def deserializar():
     # el método "dumps" y finalmente imprimir en pantalla el resultado
     # Recuerde utilizar indent=4 para poder observar mejor el resultado
     # en pantalla y comparelo contra el JSON que generó en la función anterior
+
+    with open('json_data.json', 'r') as jsonfile:
+        json_data = json.load(jsonfile)
+
+    print(json.dumps(json_data, indent=4))
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
