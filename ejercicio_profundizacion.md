@@ -99,3 +99,6 @@ Cuando finalicen el ejercicio pueden realizar las siguientes modificaciones:
 - Que la función fetch reciba por parámetro la ciudad que se desea buscar en la URL.
 - Jugar con algunos datos extra que hay en el JSON como la cantidad de ambients, y realizar gráficos o comparaciones (sean creativos ^_^).
 
+
+
+
